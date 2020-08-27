@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres:latest"
+    container_name: everycheese_db
+    environment:
+      - POSTGRES_PASSWORD=everycheese
+      - POSTGRES_USER=everycheese
+      - POSTGRES_DB=everycheese
+    ports:
+      - "54320:5432"
+    volumes:
+      - everycheese_db:/var/lib/postgresql/data
+
+volumes:
+  everycheese_db:
